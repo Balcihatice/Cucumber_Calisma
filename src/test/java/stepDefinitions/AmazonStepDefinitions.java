@@ -115,7 +115,7 @@ public class AmazonStepDefinitions {
     @Then("kullanici {int} sn bekler")
     public void kullaniciSnBekler(int istenenSaniye) {
         try {
-            Thread.sleep(istenenSaniye*1000);
+            Thread.sleep(istenenSaniye * 1000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
