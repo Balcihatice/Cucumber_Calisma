@@ -1,6 +1,6 @@
 Feature: US1005 dogru kullanici adi ve sifre ile giris yapar
 
-  @allure
+  @allure @pr2
   Scenario: TC12 pozitif login test
 
     Given kullanici "allUrl" anasayfasinda

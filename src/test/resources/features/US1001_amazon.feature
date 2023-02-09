@@ -8,7 +8,7 @@ Feature: US1001_Kullanici Amazon sayfasinda arama yapar.
     And sonuclarin Nutella icerdigini test eder
     And sayfayi kapatir
 
-  @java @ikisi
+  @java @pr1
   Scenario: TC 02 kullanici amazon da Jaba aratir
     Given kullanici amazon ana sayfasinda
     Then kullanici Java icin arama yapar
