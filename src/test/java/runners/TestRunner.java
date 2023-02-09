@@ -7,18 +7,18 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        plugin={"html:target/cucumber-reports.html",
-        "json:target/json-reports/cucumber.json",
-        "junit:target/xml-reports/cucumber.xml"
+        plugin = {"html:target/cucumber-reports.html",
+                "json:target/json-reports/cucumber.json",
+                "junit:target/xml-report/cucumber.xml"
         },
 
         features = "src/test/resources/features",
         glue = "stepDefinitions",
-        tags = "@parametre",
+        tags = "@aut",
         dryRun = false
 
 )
-public class Runner {
+public class TestRunner {
     /*
     Bir frameworkte bir tek runner classi yeterli olabilir.
     Runner class`inda class body`sinde hic bir sey olmaz.
