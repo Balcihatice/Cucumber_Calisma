@@ -22,7 +22,7 @@ public class Driver {
      obje olusturmak icin kullanilan constructor`i private yaptiginizda baska
      classlar da Driver class`indan obje olusturulmasi mumkun olamaz.
      */
-  public Driver(){
+    public Driver() {
         //Bu contructori day19 icin olusturduk
     }
 
@@ -60,6 +60,4 @@ public class Driver {
             driver = null;
         }
     }
-
-
 }
