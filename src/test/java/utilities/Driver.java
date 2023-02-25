@@ -15,7 +15,7 @@ public class Driver {
     // Driver olusturup ilgili ayarlarin yapilmasi ve en sonda
     // Driverin kapatilmasi tercih edilmistir
     /*POM de Driver classindaki getDriver() nin obje olusturulasak kullanilmasini  engellemek icin
-    Singleton pattern kullanimi benimsenmeistir.
+    Singleton pattern kullanimi benimsenmistir.
      Singleton pattern : Bir classin farkli classlardan obje olusturularak kullanilmasini
      engellemek icin kullanilir.herkes static methodu kullansin diye
      Bunu saglamak icin kullanilan constructori private yaptigimizda
@@ -23,7 +23,7 @@ public class Driver {
      classlar da Driver class`indan obje olusturulmasi mumkun olamaz.
      */
     public Driver() {
-        //Bu contructori day19 icin olusturduk
+
     }
 
     static WebDriver driver;
