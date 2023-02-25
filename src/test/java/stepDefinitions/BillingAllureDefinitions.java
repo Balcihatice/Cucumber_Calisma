@@ -3,15 +3,15 @@ package stepDefinitions;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
-import pages.AllurePage;
+import pages.BillingAllurePage;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.JSUtils;
 import utilities.ReusableMethods;
 import java.io.IOException;
 
-public class AllureDefinitions {
-    AllurePage allurePage = new AllurePage();
+public class BillingAllureDefinitions {
+    BillingAllurePage allurePage = new BillingAllurePage();
 
     @Given("kullanici {string} sayfasina gider")
     public void kullanici_sayfasina_gider(String string) {
@@ -136,4 +136,8 @@ public class AllureDefinitions {
         ReusableMethods.waitFor(1);
         ReusableMethods.getScreenshot("Hatice_Billing");
     }
+
+    //ShippingAllure kismi
+
+
 }
