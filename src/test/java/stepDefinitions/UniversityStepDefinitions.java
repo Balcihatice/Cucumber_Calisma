@@ -33,7 +33,6 @@ public class UniversityStepDefinitions {
 
     @Then("Diger window`a gecer")
     public void diger_window_a_gecer() {
-        String windowHandle1 = Driver.getDriver().getWindowHandle();
         ReusableMethods.switchToWindow(1);
     }
 
@@ -46,16 +45,15 @@ public class UniversityStepDefinitions {
 
     @Then("login butonuna tiklar")
     public void login_butonuna_tiklar() {
-        ReusableMethods.waitFor(3);
+        ReusableMethods.waitFor(2);
         universityPage.loginButton.click();
     }
 
     @Then("popup ta cikan yazinin {string} oldugunu test eder")
     public void popup_ta_cikan_yazinin_oldugunu_test_eder(String string) {
-        ReusableMethods.waitFor(3);
         String str = Driver.getDriver().switchTo().alert().getText();
         Assert.assertTrue(str.contains("validation failed"));
-        ReusableMethods.waitFor(3);
+        ReusableMethods.waitFor(1);
     }
 
     @Then("Ok diyerek popup`i kapatir")
@@ -72,7 +70,6 @@ public class UniversityStepDefinitions {
 
     @Then("ilk sayfada oldugunu test eder")
     public void ilk_sayfada_oldugunu_test_eder() {
-        ReusableMethods.waitFor(1);
         Assert.assertTrue(universityPage.loginPortal.isDisplayed());
         ReusableMethods.waitFor(1);
     }

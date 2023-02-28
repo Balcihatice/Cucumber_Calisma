@@ -19,7 +19,6 @@ public class UniversityPage {
     public WebElement passwordd;
     @FindBy(xpath = "//button[@id='login-button']")
     public WebElement loginButton;
-    @FindBy(xpath = "")
-    public WebElement popup;
+
 
 }
