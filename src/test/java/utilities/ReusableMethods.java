@@ -48,7 +48,10 @@ public class ReusableMethods {
         }
         Driver.getDriver().switchTo().window(origin);
     }
-
+    public static void switchToWindow(int windowNumber) {
+        List<String> list = new ArrayList<>(driver.getWindowHandles());
+        driver.switchTo().window(list.get(windowNumber));
+    }
 
     //========Hover Over=====//
     public static void hover(WebElement element) {

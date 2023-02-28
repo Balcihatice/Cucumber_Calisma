@@ -10,6 +10,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import java.time.Duration;
 
 public class Driver {
+
+
     //POM da Driver icin TestBase clasina extend etmek yerine
     // Drive classindan static metodlar kullanarak
     // Driver olusturup ilgili ayarlarin yapilmasi ve en sonda
