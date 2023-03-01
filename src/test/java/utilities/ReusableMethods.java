@@ -5,6 +5,7 @@ import org.junit.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.*;
+import pages.RegisterPage;
 
 import java.io.File;
 import java.io.IOException;
@@ -48,6 +49,7 @@ public class ReusableMethods {
         }
         Driver.getDriver().switchTo().window(origin);
     }
+
     public static void switchToWindow(int windowNumber) {
         List<String> list = new ArrayList<>(driver.getWindowHandles());
         driver.switchTo().window(list.get(windowNumber));
@@ -59,7 +61,7 @@ public class ReusableMethods {
         actions.moveToElement(element).perform();
     }
 
-    public static String  getAttributevalue(String element, String attribute) {
+    public static String getAttributevalue(String element, String attribute) {
         String attributeValue = Driver.getDriver().findElement(By.xpath(element)).getAttribute(attribute);
         // System.out.println(attributeValue);
         return attributeValue;
@@ -220,7 +222,6 @@ public class ReusableMethods {
     }
 
 
-
     public static void verifyElementNotDisplayed(WebElement element) {
         try {
             assertFalse("Element should not be visible: " + element, element.isDisplayed());
@@ -265,6 +266,7 @@ public class ReusableMethods {
         js.executeScript("arguments[0].scrollIntoView(true);", element);
 
     }
+
     public static void takeScreenshotOfElement(WebElement element) throws IOException {
 //        1. take screenshot
         File image = element.getScreenshotAs(OutputType.FILE);
@@ -274,6 +276,7 @@ public class ReusableMethods {
         String path = System.getProperty("user.dir") + "/test-output/Screenshots/" + currentTime + "image.png";
         FileUtils.copyFile(image, new File(path));
     }
+
     public static String getValueByJS(String idOfElement) {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         String text = js.executeScript("return document.getElementById('" + idOfElement + "').value").toString();
@@ -296,6 +299,30 @@ public class ReusableMethods {
             }
         }
     }
+
+    static RegisterPage registerPage;
+
+    public static void getEmail() {
+        registerPage = new RegisterPage();
+        Driver.getDriver().navigate().to("https://www.fakemail.net/");
+        WebElement mail = Driver.getDriver().findElement(By.xpath("//div[@class='col-xs-12 col-md-6 tbg']//div[1]"));
+        ReusableMethods.waitForVisibility(mail, 5);
+        String email = mail.getText();
+        Driver.getDriver().navigate().back();
+        registerPage.emailIlk.sendKeys(email);
+        registerPage.emailIlk.click();
+    }
+
+    public static void getCode() {
+        waitForVisibility(registerPage.verificationCodeText, 55);
+        Driver.getDriver().navigate().to("https://www.fakemail.net/");
+        WebElement message = Driver.getDriver().findElement(By.xpath("//tr//td[contains(text(),' Email Verification Code - ')]"));
+        String code = message.getText().split("Code - ")[1];
+        Driver.getDriver().navigate().back();
+        registerPage.codeText.sendKeys(code);
+
+    }
+
 
 
 
