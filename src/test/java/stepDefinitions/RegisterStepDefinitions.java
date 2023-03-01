@@ -64,7 +64,7 @@ public class RegisterStepDefinitions {
 
     @Then("Let`s Go yazisinin gorunur oldugunu dogrular")
     public void letSGoYazisininGorunurOldugunuDogrular() throws IOException {
-        registerPage.letsGoDashboard.isDisplayed();
+        assert registerPage.lestGo.isDisplayed();
         ReusableMethods.getScreenshot("Hatice");
     }
 }

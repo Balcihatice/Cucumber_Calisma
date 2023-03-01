@@ -12,3 +12,4 @@ Feature: Vendor Registration
     And Confirm password alanina "Confirm Password" yazar
     And "Register" kayit butonuna tiklar
     Then Let`s Go yazisinin gorunur oldugunu dogrular
+    And sayfayi kapatir
