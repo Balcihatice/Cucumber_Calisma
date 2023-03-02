@@ -8,7 +8,7 @@ Feature: US1017 Demoqa_wait
     Then Allert uzerindeki yazinin “This alert appeared after 5 seconds” oldugunu test eder
     And OK butonuna basip Allert'i kapatir
 
-#  Scenario:  TC1018_kullanici_butonun_enabled_oldugunu_test_edebilmeli
-#    When kullanici "demoqa2_url" anasayfaya gider
-#    And “Will enable 5 seconds” butonunun enable olmasini bekler
-#    Then “Will enable 5 seconds” butonunun enable oldugunu test eder
+  Scenario:  TC1018_kullanici_butonun_enabled_oldugunu_test_edebilmeli
+    When kullanici "demoqa2_url" anasayfaya gider
+    And “Will enable 5 seconds” butonunun enable olmasini bekler
+    Then “Will enable 5 seconds” butonunun enable oldugunu test eder

@@ -1,5 +1,6 @@
 package stepDefinitions;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -51,5 +52,13 @@ public class DemoqaStepDefinitions {
     public void ok_butonuna_basip_allert_i_kapatir() {
         Driver.getDriver().switchTo().alert().accept();
     }
+    @And("“Will enable 5 seconds” butonunun enable olmasini bekler")
+    public void willEnableSecondsButonununEnableOlmasiniBekler() {
+        wait.until(ExpectedConditions.elementToBeClickable(demoqaPage.enableAfter5Second));
+    }
 
+    @Then("“Will enable 5 seconds” butonunun enable oldugunu test eder")
+    public void willEnableSecondsButonununEnableOldugunuTestEder() {
+        Assert.assertTrue(demoqaPage.enableAfter5Second.isEnabled());
+    }
 }
